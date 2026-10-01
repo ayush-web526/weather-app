@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weather App</title>
+<style>
+body{background:linear-gradient(to right,#6a11cb,#2575fc);height:100vh;display:flex;justify-content:center;align-items:center;margin:0;font-family:sans-serif}
+.box{background:white;padding:25px;border-radius:15px;text-align:center;width:320px}
+input{padding:10px;width:60%;border-radius:20px;border:1px solid #999}
+button{padding:10px 15px;border-radius:20px;border:none;background:#6a11cb;color:white}
+#out{margin-top:20px;font-size:20px;font-weight:bold}
+</style>
+</head>
+<body>
+<div class="box">
+<h2>Weather App ⛅</h2>
+<input id="city" placeholder="City: Varanasi">
+<button onclick="show()">Search</button>
+<div id="out">Result yaha ayega</div>
+</div>
+<script>
+function show(){
+let c=document.getElementById('city').value || 'Varanasi';
+let temp=Math.floor(Math.random()*15)+25;
+let cond=['Sunny ☀️','Cloudy ☁️','Rainy 🌧️','Cool 😎'];
+let r=cond[Math.floor(Math.random()*cond.length)];
+document.getElementById('out').innerHTML=c+"<br>"+temp+"°C<br>"+r;
+}
+</script>
+</body>
+</html>
